@@ -7,12 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="InterviewCake" />
+        <module name="Coin" />
         <module name="LagestStack" />
+        <module name="InterviewCake" />
         <module name="MergingMeetingTimes" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Coin" target="11" />
       <module name="InterviewCake" target="11" />
       <module name="LagestStack" target="11" />
       <module name="MergingMeetingTimes" target="11" />
