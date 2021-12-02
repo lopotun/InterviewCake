@@ -1,1 +1,5 @@
 /target/
+/.idea/libraries/
+/MergingMeetingTimes/target/
+/MergingMeetingTimes/out/
+/LagestStack/target/

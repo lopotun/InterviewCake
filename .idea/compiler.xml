@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="InterviewCake" />
+        <module name="LagestStack" />
         <module name="MergingMeetingTimes" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="InterviewCake" target="11" />
+      <module name="LagestStack" target="11" />
       <module name="MergingMeetingTimes" target="11" />
     </bytecodeTargetLevel>
   </component>
