@@ -16,6 +16,7 @@ class CoinTest {
         List<LinkedList<Integer>> res = x.parse(17, List.of(15, 10, 5, 3, 2, 1));
         //noinspection RedundantTypeArguments (explicit type arguments speedup compilation and analysis time)
         assertEquals(res, List.<List<Integer>>of(List.of(15, 2), List.of(15, 1, 1), List.of(10, 5, 2), List.of(10, 5, 1, 1), List.of(10, 3, 3, 1), List.of(10, 3, 2, 2), List.of(10, 3, 2, 1, 1), List.of(10, 3, 1, 1, 1, 1), List.of(10, 2, 2, 2, 1), List.of(10, 2, 2, 1, 1, 1), List.of(10, 2, 1, 1, 1, 1, 1), List.of(10, 1, 1, 1, 1, 1, 1, 1), List.of(5, 5, 5, 2), List.of(5, 5, 5, 1, 1), List.of(5, 5, 3, 3, 1), List.of(5, 5, 3, 2, 2), List.of(5, 5, 3, 2, 1, 1), List.of(5, 5, 3, 1, 1, 1, 1), List.of(5, 5, 2, 2, 2, 1), List.of(5, 5, 2, 2, 1, 1, 1), List.of(5, 5, 2, 1, 1, 1, 1, 1), List.of(5, 5, 1, 1, 1, 1, 1, 1, 1), List.of(5, 3, 3, 3, 3), List.of(5, 3, 3, 3, 2, 1), List.of(5, 3, 3, 3, 1, 1, 1), List.of(5, 3, 3, 2, 2, 2), List.of(5, 3, 3, 2, 2, 1, 1), List.of(5, 3, 3, 2, 1, 1, 1, 1), List.of(5, 3, 3, 1, 1, 1, 1, 1, 1), List.of(5, 3, 2, 2, 2, 2, 1), List.of(5, 3, 2, 2, 2, 1, 1, 1), List.of(5, 3, 2, 2, 1, 1, 1, 1, 1), List.of(5, 3, 2, 1, 1, 1, 1, 1, 1, 1), List.of(5, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(5, 2, 2, 2, 2, 2, 2), List.of(5, 2, 2, 2, 2, 2, 1, 1), List.of(5, 2, 2, 2, 2, 1, 1, 1, 1), List.of(5, 2, 2, 2, 1, 1, 1, 1, 1, 1), List.of(5, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1), List.of(5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 3, 3, 3, 3, 2), List.of(3, 3, 3, 3, 3, 1, 1), List.of(3, 3, 3, 3, 2, 2, 1), List.of(3, 3, 3, 3, 2, 1, 1, 1), List.of(3, 3, 3, 3, 1, 1, 1, 1, 1), List.of(3, 3, 3, 2, 2, 2, 2), List.of(3, 3, 3, 2, 2, 2, 1, 1), List.of(3, 3, 3, 2, 2, 1, 1, 1, 1), List.of(3, 3, 3, 2, 1, 1, 1, 1, 1, 1), List.of(3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 3, 2, 2, 2, 2, 2, 1), List.of(3, 3, 2, 2, 2, 2, 1, 1, 1), List.of(3, 3, 2, 2, 2, 1, 1, 1, 1, 1), List.of(3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1), List.of(3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 2, 2, 2, 2, 2, 2, 2), List.of(3, 2, 2, 2, 2, 2, 2, 1, 1), List.of(3, 2, 2, 2, 2, 2, 1, 1, 1, 1), List.of(3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1), List.of(3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(2, 2, 2, 2, 2, 2, 2, 2, 1), List.of(2, 2, 2, 2, 2, 2, 2, 1, 1, 1), List.of(2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1), List.of(2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1), List.of(2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), List.of(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)));
+        assertEquals(74, res.size());
     }
     @Test
     void prs4() {
@@ -34,5 +35,11 @@ class CoinTest {
         Coin x = new Coin();
         List<LinkedList<Integer>> res = x.parse(17, List.of(15, 10, 5));
         assertEquals(res, Collections.emptyList());
+    }
+
+    @Test
+    void changePossibilitiesBottomUp() {
+        final int i = Coin.changePossibilitiesBottomUp(17, new int[]{1, 2, 3, 5, 10, 15});
+        assertEquals(74, i);
     }
 }
