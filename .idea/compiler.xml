@@ -10,10 +10,12 @@
         <module name="Coin" />
         <module name="LagestStack" />
         <module name="InterviewCake" />
+        <module name="BalancedBinaryTree" />
         <module name="MergingMeetingTimes" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BalancedBinaryTree" target="17" />
       <module name="Coin" target="11" />
       <module name="InterviewCake" target="11" />
       <module name="LagestStack" target="11" />
