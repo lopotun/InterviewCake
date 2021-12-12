@@ -9,31 +9,32 @@ import static org.junit.jupiter.api.Assertions.*;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 class BinaryTreeCheckerTest {
+    private static final boolean FP_MODE = false;
 
 
     @Test
     void isValidNull() {
-        assertTrue(BinaryTreeChecker.isValid(null));
+        assertTrue(BinaryTreeChecker.isValid(null, FP_MODE));
     }
 
     @Test
     void isValidOne() {
         BinaryTreeNode x = new BinaryTreeNode(42);
-        assertTrue(BinaryTreeChecker.isValid(x));
+        assertTrue(BinaryTreeChecker.isValid(x, FP_MODE));
     }
 
     @Test
     void isValidTwo() {
         BinaryTreeNode x = new BinaryTreeNode(42);
         x.insertLeft(17);
-        assertTrue(BinaryTreeChecker.isValid(x));
+        assertTrue(BinaryTreeChecker.isValid(x, FP_MODE));
     }
 
     @Test
     void isValid3L0R() {
         BinaryTreeNode x = new BinaryTreeNode(42);
         x.insertLeft(17).insertLeft(15);
-        assertTrue(BinaryTreeChecker.isValid(x));
+        assertTrue(BinaryTreeChecker.isValid(x, FP_MODE));
     }
 
     /**
@@ -52,7 +53,7 @@ class BinaryTreeCheckerTest {
         level1R.insertLeft(70);
         level1R.insertRight(90);
 
-        assertFalse(BinaryTreeChecker.isValid(level0));
+        assertFalse(BinaryTreeChecker.isValid(level0, FP_MODE));
     }
 
 
@@ -69,7 +70,7 @@ class BinaryTreeCheckerTest {
         BinaryTreeNode level1R = level0.insertRight(80);
         level1R.insertLeft(40);
 
-        assertFalse(BinaryTreeChecker.isValid(level0));
+        assertFalse(BinaryTreeChecker.isValid(level0, FP_MODE));
     }
 
     /**
@@ -84,7 +85,7 @@ class BinaryTreeCheckerTest {
         level2L.insertRight(50);
         level0.insertRight(80);
 
-        assertFalse(BinaryTreeChecker.isValid(level0));
+        assertFalse(BinaryTreeChecker.isValid(level0, FP_MODE));
     }
 
     /**
@@ -99,7 +100,7 @@ class BinaryTreeCheckerTest {
         level2L.insertRight(60);
         level0.insertRight(80);
 
-        assertFalse(BinaryTreeChecker.isValid(level0));
+        assertFalse(BinaryTreeChecker.isValid(level0, FP_MODE));
     }
 
     /**
@@ -113,7 +114,7 @@ class BinaryTreeCheckerTest {
         BinaryTreeNode level2L = level1R.insertLeft(70);
         level2L.insertRight(90);
 
-        assertFalse(BinaryTreeChecker.isValid(level0));
+        assertFalse(BinaryTreeChecker.isValid(level0, FP_MODE));
     }
 
     /**
@@ -121,10 +122,10 @@ class BinaryTreeCheckerTest {
      */
     @Test
     void invalidBad20() {
-        BinaryTreeNode x = new BinaryTreeNode(42);
-        x.insertLeft(17).insertLeft(15);
+        BinaryTreeNode x = new BinaryTreeNode(50);
+        x.insertLeft(30).insertLeft(25);
         x.insertRight(20);
-        assertFalse(BinaryTreeChecker.isValid(x));
+        assertFalse(BinaryTreeChecker.isValid(x, FP_MODE));
     }
 
     @Test
@@ -132,7 +133,7 @@ class BinaryTreeCheckerTest {
         BinaryTreeNode x = new BinaryTreeNode(42);
         x.insertLeft(17).insertLeft(15).insertLeft(10);
         x.insertRight(20);
-        assertFalse(BinaryTreeChecker.isValid(x));
+        assertFalse(BinaryTreeChecker.isValid(x, FP_MODE));
     }
 
     @Test
@@ -141,6 +142,6 @@ class BinaryTreeCheckerTest {
         x.insertLeft(17).insertLeft(15).insertLeft(10).insertRight(5);
         x.insertRight(20).insertLeft(22);
         x.right.insertRight(23);
-        assertFalse(BinaryTreeChecker.isValid(x));
+        assertFalse(BinaryTreeChecker.isValid(x, FP_MODE));
     }
 }
