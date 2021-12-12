@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BalancedBinaryTree/BalancedBinaryTree.iml" filepath="$PROJECT_DIR$/BalancedBinaryTree/BalancedBinaryTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BinaryTreeChecker/BinaryTreeChecker.iml" filepath="$PROJECT_DIR$/BinaryTreeChecker/BinaryTreeChecker.iml" />
       <module fileurl="file://$PROJECT_DIR$/Coin/Coin.iml" filepath="$PROJECT_DIR$/Coin/Coin.iml" />
       <module fileurl="file://$PROJECT_DIR$/InterviewCake.iml" filepath="$PROJECT_DIR$/InterviewCake.iml" />
       <module fileurl="file://$PROJECT_DIR$/LagestStack/LagestStack.iml" filepath="$PROJECT_DIR$/LagestStack/LagestStack.iml" />
