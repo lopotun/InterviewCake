@@ -3,7 +3,7 @@ import com.interviewcake.evgenyk.Pair;
 /**
  * https://www.interviewcake.com/question/java/balanced-binary-tree
  * Created by Evgeny Kurtser on 09-Dec-21 at 8:00 PM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 public class BinaryTreeNode {
 

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by Evgeny Kurtser on 09-Dec-21 at 8:17 PM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 class BinaryTreeNodeTest {
 
