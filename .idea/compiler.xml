@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Coin" />
+        <module name="QueueWithTwoStacks" />
+        <module name="BalancedBinaryTree" />
+        <module name="MergingMeetingTimes" />
         <module name="LagestStack" />
         <module name="BinaryTreeChecker" />
         <module name="InterviewCake" />
-        <module name="BalancedBinaryTree" />
-        <module name="MergingMeetingTimes" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +23,7 @@
       <module name="InterviewCake" target="11" />
       <module name="LagestStack" target="11" />
       <module name="MergingMeetingTimes" target="11" />
+      <module name="QueueWithTwoStacks" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

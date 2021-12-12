@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/InterviewCake.iml" filepath="$PROJECT_DIR$/InterviewCake.iml" />
       <module fileurl="file://$PROJECT_DIR$/LagestStack/LagestStack.iml" filepath="$PROJECT_DIR$/LagestStack/LagestStack.iml" />
       <module fileurl="file://$PROJECT_DIR$/MergingMeetingTimes/MergingMeetingTimes.iml" filepath="$PROJECT_DIR$/MergingMeetingTimes/MergingMeetingTimes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QueueWithTwoStacks/QueueWithTwoStacks.iml" filepath="$PROJECT_DIR$/QueueWithTwoStacks/QueueWithTwoStacks.iml" />
     </modules>
   </component>
 </project>
