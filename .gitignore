@@ -1,6 +1,4 @@
 /target/
 /.idea/libraries/
-/MergingMeetingTimes/target/
 /MergingMeetingTimes/out/
-/LagestStack/target/
-/Coin/target/
+**/target/**
