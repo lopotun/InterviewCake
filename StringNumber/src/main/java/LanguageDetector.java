@@ -4,7 +4,7 @@ import java.util.Set;
 
 /**
  * Created by Evgeny Kurtser on 05-Jan-22 at 2:32 PM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 public class LanguageDetector {
     enum Language {

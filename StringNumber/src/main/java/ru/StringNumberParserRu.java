@@ -4,7 +4,7 @@ import common.StringNumberParser;
 
 /**
  * Created by Evgeny Kurtser on 06-Jan-22 at 8:30 PM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  * <img src="doc-files/StringToNumberRu.svg" alt="Foo">
  */
 public class StringNumberParserRu implements StringNumberParser {

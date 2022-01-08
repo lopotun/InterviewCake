@@ -2,7 +2,7 @@ package ru;
 
 /**
  * Created by Evgeny Kurtser on 09-Jan-22 at 12:35 AM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 enum ParsingState {
     S_Init {

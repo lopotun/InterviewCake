@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Created by Evgeny Kurtser on 08-Jan-22 at 10:47 PM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 public class UtilsRu {
     private static final Map<String, StateWithNumber> ONES = new HashMap<>();

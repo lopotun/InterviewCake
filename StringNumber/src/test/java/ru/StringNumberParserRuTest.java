@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by Evgeny Kurtser on 08-Jan-22 at 11:43 PM.
- * <a href=mailto:EvgenyK@traiana.com>EvgenyK@traiana.com</a>
+ * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 class StringNumberParserRuTest {
 
