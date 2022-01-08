@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/LagestStack/LagestStack.iml" filepath="$PROJECT_DIR$/LagestStack/LagestStack.iml" />
       <module fileurl="file://$PROJECT_DIR$/MergingMeetingTimes/MergingMeetingTimes.iml" filepath="$PROJECT_DIR$/MergingMeetingTimes/MergingMeetingTimes.iml" />
       <module fileurl="file://$PROJECT_DIR$/QueueWithTwoStacks/QueueWithTwoStacks.iml" filepath="$PROJECT_DIR$/QueueWithTwoStacks/QueueWithTwoStacks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StringNumber/StringNumber.iml" filepath="$PROJECT_DIR$/StringNumber/StringNumber.iml" />
     </modules>
   </component>
 </project>

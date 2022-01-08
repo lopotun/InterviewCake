@@ -10,10 +10,11 @@
         <option value="$PROJECT_DIR$/BalancedBinaryTree/pom.xml" />
         <option value="$PROJECT_DIR$/BinaryTreeChecker/pom.xml" />
         <option value="$PROJECT_DIR$/QueueWithTwoStacks/pom.xml" />
+        <option value="$PROJECT_DIR$/StringNumber/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
