@@ -9,7 +9,8 @@ import java.util.function.Supplier;
  */
 public class Utils {
 
-    public enum NumberPosition{O, T, H, G}
+    public enum NumberPosition{ONES, TENS, HUNDREDS, GROUPS}
+
     /**
      * FSM entry point.
      */
@@ -31,32 +32,16 @@ public class Utils {
         }
     }
 
-//    public static StateWithNumber getState(String s) {
-//        StateWithNumber stateWithNumber = ONES.get(s);
-//        if(stateWithNumber == null) {
-//            stateWithNumber = TENS.get(s);
-//            if(stateWithNumber == null) {
-//                stateWithNumber = HUNDREDS.get(s);
-//                if(stateWithNumber == null) {
-//                    stateWithNumber = GROUPS.get(s);
-//                    if(stateWithNumber == null) {
-//                        stateWithNumber = ERROR;
-//                    }
-//                }
-//            }
-//        }
-//        return stateWithNumber;
-//    }
 
     public static StateWithNumber getState(String s, Supplier<Map<NumberPosition, Map<String, StateWithNumber>>> f) {
         final Map<NumberPosition, Map<String, StateWithNumber>> map = f.get();
-        StateWithNumber stateWithNumber = map.get(NumberPosition.O).get(s);
+        StateWithNumber stateWithNumber = map.get(NumberPosition.ONES).get(s);
         if(stateWithNumber == null) {
-            stateWithNumber = map.get(NumberPosition.T).get(s);
+            stateWithNumber = map.get(NumberPosition.TENS).get(s);
             if(stateWithNumber == null) {
-                stateWithNumber = map.get(NumberPosition.H).get(s);
+                stateWithNumber = map.get(NumberPosition.HUNDREDS).get(s);
                 if(stateWithNumber == null) {
-                    stateWithNumber = map.get(NumberPosition.G).get(s);
+                    stateWithNumber = map.get(NumberPosition.GROUPS).get(s);
                     if(stateWithNumber == null) {
                         stateWithNumber = ERROR;
                     }
