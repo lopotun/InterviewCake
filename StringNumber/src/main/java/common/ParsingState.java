@@ -1,4 +1,7 @@
-package ru;
+package common;
+
+import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * Enum-based FSM.
@@ -6,7 +9,7 @@ package ru;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  * <img src="doc-files/StringToNumberRu.svg" alt="Foo">
  */
-enum ParsingState {
+public enum ParsingState {
     /**
      * This state indicates "group" delimiter such as "millions", "thousands" etc.
      */
@@ -53,10 +56,10 @@ enum ParsingState {
     /**
      * Transit to next state based on the given event
      * @param event text-number event (e.g. "sixty" or "thousand")
-     * @return  next state. If the given event is not supported on the current state then {@linkplain UtilsRu#ERROR} is returned
+     * @return  next state. If the given event is not supported on the current state then {@linkplain Utils#ERROR} is returned
      */
-    public UtilsRu.StateWithNumber nextState(String event) {
-        final UtilsRu.StateWithNumber stateWithNumber = UtilsRu.getState(event);
-        return isStateAllowed(stateWithNumber.state) ? stateWithNumber : UtilsRu.ERROR;
+    public Utils.StateWithNumber nextState(String event, Supplier<Map<Utils.NumberPosition, Map<String, Utils.StateWithNumber>>> f) {
+        final Utils.StateWithNumber stateWithNumber = Utils.getState(event, f);
+        return isStateAllowed(stateWithNumber.state) ? stateWithNumber : Utils.ERROR;
     }
 }
