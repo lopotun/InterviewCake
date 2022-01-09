@@ -9,21 +9,26 @@ import common.StringNumberParser;
  */
 public class StringNumberParserRu implements StringNumberParser {
     public Long parseStringNumber(String input) {
-        long res = 0;
-        ParsingState ps = ParsingState.S_Init;
-        final String[] strings = input.split("\\s+");
+        long res = 0L, accum = 0L;
+        UtilsRu.StateWithNumber numberedState = UtilsRu.INIT;
+
+        final String[] strings = input.split("\\s+");   // Split the string: "sixty five" -> ["sixty", "five"]
         for (String s: strings) {
-            final UtilsRu.StateWithNumber nextState = ps.nextState(s);
-            if(nextState == UtilsRu.ERROR_STATE) {
+            // Get to next state based on the current string number
+            numberedState = numberedState.state.nextState(s);
+            if(numberedState == UtilsRu.ERROR) {
                 throw new RuntimeException(String.format("Unrecognized token \"%s\"", s));
             }
-            if(nextState.number > 999) {
-                res *= nextState.number;
+            // This is the "millions", "thousands" delimiter.
+            if(numberedState.state == ParsingState.S_Group) {
+                accum *= numberedState.number; // Multiply accumulated value by 10^x
+                res += accum;
+                accum = 0L; // Reset accumulated value
             } else {
-                res += nextState.number;
+                accum += numberedState.number;
             }
-            ps = nextState.state;
         }
+        res += accum;
         return res;
     }
 }

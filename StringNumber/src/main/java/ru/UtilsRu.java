@@ -11,7 +11,7 @@ public class UtilsRu {
     private static final Map<String, StateWithNumber> ONES = new HashMap<>();
     private static final Map<String, StateWithNumber> TENS = new HashMap<>();
     private static final Map<String, StateWithNumber> HUNDREDS = new HashMap<>();
-    private static final Map<String, StateWithNumber> LEVELS = new HashMap<>();
+    private static final Map<String, StateWithNumber> GROUPS = new HashMap<>();
     static {
         ONES.put("один", new StateWithNumber(ParsingState.S_1_9, 1L));
         ONES.put("одна", new StateWithNumber(ParsingState.S_1_9, 1L));
@@ -54,20 +54,27 @@ public class UtilsRu {
         HUNDREDS.put("восемьсот", new StateWithNumber(ParsingState.S_100_900, 800L));
         HUNDREDS.put("девятсот", new StateWithNumber(ParsingState.S_100_900, 900L));
 
-        LEVELS.put("тысяч", new StateWithNumber(ParsingState.S_Init, 1_000L));
-        LEVELS.put("тысяча", new StateWithNumber(ParsingState.S_Init, 1_000L));
-        LEVELS.put("миллион", new StateWithNumber(ParsingState.S_Init, 1_000_000L));
-        LEVELS.put("миллиона", new StateWithNumber(ParsingState.S_Init, 1_000_000L));
-        LEVELS.put("миллионов", new StateWithNumber(ParsingState.S_Init, 1_000_000L));
-        LEVELS.put("миллиард", new StateWithNumber(ParsingState.S_Init, 1_000_000_000L));
-        LEVELS.put("миллиарда", new StateWithNumber(ParsingState.S_Init, 1_000_000_000L));
-        LEVELS.put("миллиардов", new StateWithNumber(ParsingState.S_Init, 1_000_000_000L));
-        LEVELS.put("триллион", new StateWithNumber(ParsingState.S_Init, 1_000_000_000_000L));
-        LEVELS.put("триллиона", new StateWithNumber(ParsingState.S_Init, 1_000_000_000_000L));
-        LEVELS.put("триллионов", new StateWithNumber(ParsingState.S_Init, 1_000_000_000_000L));
+        GROUPS.put("тысяч", new StateWithNumber(ParsingState.S_Group, 1_000L));
+        GROUPS.put("тысяча", new StateWithNumber(ParsingState.S_Group, 1_000L));
+        GROUPS.put("миллион", new StateWithNumber(ParsingState.S_Group, 1_000_000L));
+        GROUPS.put("миллиона", new StateWithNumber(ParsingState.S_Group, 1_000_000L));
+        GROUPS.put("миллионов", new StateWithNumber(ParsingState.S_Group, 1_000_000L));
+        GROUPS.put("миллиард", new StateWithNumber(ParsingState.S_Group, 1_000_000_000L));
+        GROUPS.put("миллиарда", new StateWithNumber(ParsingState.S_Group, 1_000_000_000L));
+        GROUPS.put("миллиардов", new StateWithNumber(ParsingState.S_Group, 1_000_000_000L));
+        GROUPS.put("триллион", new StateWithNumber(ParsingState.S_Group, 1_000_000_000_000L));
+        GROUPS.put("триллиона", new StateWithNumber(ParsingState.S_Group, 1_000_000_000_000L));
+        GROUPS.put("триллионов", new StateWithNumber(ParsingState.S_Group, 1_000_000_000_000L));
     }
 
-    static final StateWithNumber ERROR_STATE = new StateWithNumber(ParsingState.S_Error, -1L);
+    /**
+     * FSM entry point.
+     */
+    static final StateWithNumber INIT = new StateWithNumber(ParsingState.S_Group, 0L);
+    /**
+     * Indicates FSM unrecognized event.
+     */
+    static final StateWithNumber ERROR = new StateWithNumber(ParsingState.S_Error, -1L);
     static class StateWithNumber {
         ParsingState state;
         Long number;
@@ -75,7 +82,6 @@ public class UtilsRu {
             this.state = state;
             this.number = number;
         }
-
         @Override
         public String toString() {
             return state + " (" + number + ")";
@@ -89,9 +95,9 @@ public class UtilsRu {
             if(stateWithNumber == null) {
                 stateWithNumber = HUNDREDS.get(s);
                 if(stateWithNumber == null) {
-                    stateWithNumber = LEVELS.get(s);
+                    stateWithNumber = GROUPS.get(s);
                     if(stateWithNumber == null) {
-                        stateWithNumber = ERROR_STATE;
+                        stateWithNumber = ERROR;
                     }
                 }
             }
