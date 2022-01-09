@@ -1,4 +1,4 @@
-package ru;
+package en;
 
 import common.ParsingState;
 import common.StringNumberParser;
@@ -13,7 +13,7 @@ import java.util.function.Supplier;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  * <img src="../common/doc-files/StringToNumberRu.svg" alt="Foo">
  */
-public class StringNumberParserEn extends StringNumberParser {
+public class LangNumberParser extends StringNumberParser {
     private static final String REGEX = "(?i)\s+(h)";
     public Long parseStringNumber(String input) {
         input = input.replaceAll(REGEX, "_$1").replace("and ", "").toLowerCase();

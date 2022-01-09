@@ -10,6 +10,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>groupId</groupId>
+            <artifactId>InterviewCake</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.8.2</version>

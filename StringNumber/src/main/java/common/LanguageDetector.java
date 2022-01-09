@@ -1,3 +1,4 @@
+package common;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,31 +8,37 @@ import java.util.Set;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 public class LanguageDetector {
-    enum Language {
-        ENGLISH('\u0041', '\u007A'),
-        HEBREW('\u05D0', '\u05EA'),
-        RUSSIAN('\u0410', '\u0451'),
+    public enum Language {
+        ENGLISH("en", '\u0041', '\u007A'),
+        HEBREW("he", '\u05D0', '\u05EA'),
+        RUSSIAN("ru", '\u0410', '\u0451'),
         // Can be used to indicate multilingual input.
-        MIXED('\u0000', '\u0000') {
+        MIXED("mx", '\u0000', '\u0000') {
             @Override
             boolean belongs(char c) {
                 return false;
             }
         },
         // Can be used to indicate unrecognized language input.
-        OTHER('\u0000', '\u0000') {
+        OTHER("xx", '\u0000', '\u0000') {
             @Override
             boolean belongs(char c) {
                 return false;
             }
         };
 
+        private final String langCode;
         private final char from;
         private final char to;
 
-        Language(char from, char to) {
+        Language(String langCode, char from, char to) {
+            this.langCode = langCode;
             this.from = from;
             this.to = to;
+        }
+
+        public String getLangCode() {
+            return langCode;
         }
 
         int belongs(String text) {

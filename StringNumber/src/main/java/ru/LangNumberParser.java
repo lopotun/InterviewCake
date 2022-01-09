@@ -13,7 +13,7 @@ import java.util.function.Supplier;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  * <img src="../common/doc-files/StringToNumberRu.svg" alt="Foo">
  */
-public class StringNumberParserRu extends StringNumberParser {
+public class LangNumberParser extends StringNumberParser {
     public Long parseStringNumber(String input) {
         Supplier<Map<Utils.NumberPosition, Map<String, Utils.StateWithNumber>>> mapSupplier = () -> NUM_POS;
         return super.parseStringNumber(input, mapSupplier);
