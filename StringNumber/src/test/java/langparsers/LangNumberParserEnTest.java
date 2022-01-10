@@ -88,9 +88,17 @@ class LangNumberParserEnTest {
     }
 
     @Test
+    void parse1_000() {
+        LangNumberParserEn parser = new LangNumberParserEn();
+        assertEquals(parser.parseStringNumber("one thousand"), 1_000);
+        assertEquals(parser.parseStringNumber("a thousand"), 1_000);
+    }
+
+    @Test
     void parse5_274() {
         LangNumberParserEn parser = new LangNumberParserEn();
         assertEquals(parser.parseStringNumber("five thousands two hundreds seventy four"), 5_274);
+        assertEquals(parser.parseStringNumber("five thousands two hundreds seventy-four"), 5_274);
     }
 
 

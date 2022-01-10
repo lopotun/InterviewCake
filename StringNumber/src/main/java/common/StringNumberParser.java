@@ -23,7 +23,7 @@ public abstract class StringNumberParser {
     /**
      * Parses the given input using the supplied FSM<p/>
      * <img src="../common/doc-files/StringToNumberRu.svg" alt="Foo">
-     * @param input       number in text form e.g. "fourteen thousands two hundreds forty six"
+     * @param input       number in text form e.g. "fourteen thousands two hundreds forty-six"
      * @param fsmSupplier language-specific FSM
      * @return  numeric form of the given input, e.g. 14246
      * @throws UnrecognizedTokenException   if the given input cannot be transformed to numeric value
@@ -61,7 +61,7 @@ public abstract class StringNumberParser {
      * Then it looks for class that contains method marked with {@link TextNumberParser} annotation
      * with correspond {@link TextNumberParser#languageCode()} parameter and invokes this method.
      * {@link StringNumberParser#parseStringNumber(String, Supplier)} method providing English parser FSM.
-     * @param input       number in text form e.g. "fourteen thousands two hundreds forty six"
+     * @param input       number in text form e.g. "fourteen thousands two hundreds forty-six"
      * @return  numeric form of the given input, e.g. 14246
      * @throws LanguageException    if the input language couldn't be detected
      * @throws UnrecognizedTokenException   if the given input cannot be transformed to numeric value

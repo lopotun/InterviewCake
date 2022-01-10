@@ -68,6 +68,7 @@ class StringNumberParserTest {
     @Test
     void parse5_274() {
         assertEquals(StringNumberParser.parseNumbersString("five thousands two hundreds seventy four"), 5_274);
+        assertEquals(StringNumberParser.parseNumbersString("five thousands two hundreds seventy-four"), 5_274);
         assertEquals(StringNumberParser.parseNumbersString("пять тысяч двести семьдесят четыре"), 5_274);
     }
 

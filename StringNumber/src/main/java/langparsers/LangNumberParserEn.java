@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 /**
- * This class contains method that converts the given input e.g. "fourteen thousands two hundreds forty six" to its numeric form -- 14246<p/>
+ * This class contains method that converts the given input e.g. "fourteen thousands two hundreds forty-six" to its numeric form -- 14246<p/>
  * Usually, one class contains one conversion method. However, you're free to put as many conversion method as you like in a single class
  * provided that each conversion method handles its own language (specified in {@link TextNumberParser#languageCode()} parameter).<p/>
  *
@@ -15,19 +15,26 @@ import java.util.function.Supplier;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 public class LangNumberParserEn extends StringNumberParser {
-    private static final String REGEX = "(?i)\s+(h)";
+    private static final String REGEX_HUNDREDS = "(?i)\s+(h)";      // five hundreds -> five_hundreds
+    private static final String REGEX_XTY_Y = "(?i)ty\s*-\s*(\\w)";   // twenty-four -> twenty four
+    private static final String REGEX_A_X = "(?i)a\s+(thousand|million|billion|trillion)";  // a million -> one million
 
     /**
-     * Converts the given input e.g. "fourteen thousands two hundreds forty six" to its numeric form -- 14246<p/>
+     * Converts the given input e.g. "fourteen thousands two hundreds forty-six" to its numeric form -- 14246<p/>
      * This implementation uses {@link StringNumberParser#parseStringNumber(String, Supplier)} method providing English parser FSM.
      *
-     * @param input number in text form e.g. "fourteen thousands two hundreds forty six"
+     * @param input number in text form e.g. "fourteen thousands two hundreds forty-six"
      * @return numeric form of the given input
      * This method must be marked with {@link TextNumberParser} annotation. The {@link TextNumberParser#languageCode()} parameter indicates language (code) that is covered by this parser
      */
     @TextNumberParser(languageCode = "en")
     public Long parseStringNumber(String input) {
-        input = input.replaceAll(REGEX, "_$1").replace("and ", "").toLowerCase();
+        input = input
+                .replaceAll(REGEX_HUNDREDS, "_$1")  // five hundreds -> five_hundreds
+                .replaceAll(REGEX_XTY_Y, "ty $1")   // twenty-four -> twenty four
+                .replaceAll(REGEX_A_X, "one $1")   // twenty-four -> twenty four
+                .replace("and ", "")    // five hundreds and seven -> five hundreds seven
+                .toLowerCase();
         Supplier<Map<Utils.NumberPosition, Map<String, Utils.StateWithNumber>>> mapSupplier = () -> NUM_POS;
         return super.parseStringNumber(input, mapSupplier);
     }
@@ -80,6 +87,7 @@ public class LangNumberParserEn extends StringNumberParser {
         HUNDREDS_MAP.put("nine_hundreds", new Utils.StateWithNumber(ParsingState.S_100_900, 900L));
 
         GROUPS_MAP.put("thousand", new Utils.StateWithNumber(ParsingState.S_Group, 1_000L));
+        GROUPS_MAP.put("a_thousand", new Utils.StateWithNumber(ParsingState.S_Group, 1_000L));
         GROUPS_MAP.put("thousands", new Utils.StateWithNumber(ParsingState.S_Group, 1_000L));
         GROUPS_MAP.put("million", new Utils.StateWithNumber(ParsingState.S_Group, 1_000_000L));
         GROUPS_MAP.put("millions", new Utils.StateWithNumber(ParsingState.S_Group, 1_000_000L));

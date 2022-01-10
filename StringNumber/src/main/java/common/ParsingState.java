@@ -55,7 +55,7 @@ public enum ParsingState {
 
     /**
      * Transit to next state based on the given event
-     * @param event text-number event (e.g. "sixty" or "thousand")
+     * @param event text-number event (e.g. "sixty" or "a thousand")
      * @return  next state. If the given event is not supported on the current state then {@linkplain Utils#ERROR} is returned
      */
     public Utils.StateWithNumber nextState(String event, Supplier<Map<Utils.NumberPosition, Map<String, Utils.StateWithNumber>>> f) {
