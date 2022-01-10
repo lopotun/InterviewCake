@@ -9,7 +9,7 @@ import java.util.function.Supplier;
  */
 public class Utils {
 
-    public enum NumberPosition{ONES, TENS, HUNDREDS, GROUPS}
+    public enum NumberPosition {ONES, TENS, HUNDREDS, GROUPS}
 
     /**
      * FSM entry point.
@@ -19,13 +19,16 @@ public class Utils {
      * Indicates FSM unrecognized event.
      */
     public static final StateWithNumber ERROR = new StateWithNumber(ParsingState.S_Error, -1L);
+
     public static class StateWithNumber {
         public ParsingState state;
         public Long number;
+
         public StateWithNumber(ParsingState state, Long number) {
             this.state = state;
             this.number = number;
         }
+
         @Override
         public String toString() {
             return state + " (" + number + ")";
@@ -36,13 +39,13 @@ public class Utils {
     public static StateWithNumber getState(String s, Supplier<Map<NumberPosition, Map<String, StateWithNumber>>> f) {
         final Map<NumberPosition, Map<String, StateWithNumber>> map = f.get();
         StateWithNumber stateWithNumber = map.get(NumberPosition.ONES).get(s);
-        if(stateWithNumber == null) {
+        if (stateWithNumber == null) {
             stateWithNumber = map.get(NumberPosition.TENS).get(s);
-            if(stateWithNumber == null) {
+            if (stateWithNumber == null) {
                 stateWithNumber = map.get(NumberPosition.HUNDREDS).get(s);
-                if(stateWithNumber == null) {
+                if (stateWithNumber == null) {
                     stateWithNumber = map.get(NumberPosition.GROUPS).get(s);
-                    if(stateWithNumber == null) {
+                    if (stateWithNumber == null) {
                         stateWithNumber = ERROR;
                     }
                 }

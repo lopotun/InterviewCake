@@ -1,20 +1,31 @@
-package en;
+package langparsers;
 
-import common.ParsingState;
-import common.StringNumberParser;
-import common.Utils;
+import common.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
 /**
- * Created by Evgeny Kurtser on 06-Jan-22 at 8:30 PM.
+ * This class contains method that converts the given input e.g. "fourteen thousands two hundreds forty six" to its numeric form -- 14246<p/>
+ * Usually, one class contains one conversion method. However, you're free to put as many conversion method as you like in a single class
+ * provided that each conversion method handles its own language (specified in {@link TextNumberParser#languageCode()} parameter).<p/>
+ *
+ * Created by Evgeny Kurtser on 09-Jan-22 at 2:28 PM.
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
- * <img src="../common/doc-files/StringToNumberRu.svg" alt="Foo">
  */
-public class LangNumberParser extends StringNumberParser {
+public class LangNumberParserEn extends StringNumberParser {
     private static final String REGEX = "(?i)\s+(h)";
+
+    /**
+     * Converts the given input e.g. "fourteen thousands two hundreds forty six" to its numeric form -- 14246<p/>
+     * This implementation uses {@link StringNumberParser#parseStringNumber(String, Supplier)} method providing English parser FSM.
+     *
+     * @param input number in text form e.g. "fourteen thousands two hundreds forty six"
+     * @return numeric form of the given input
+     * This method must be marked with {@link TextNumberParser} annotation. The {@link TextNumberParser#languageCode()} parameter indicates language (code) that is covered by this parser
+     */
+    @TextNumberParser(languageCode = "en")
     public Long parseStringNumber(String input) {
         input = input.replaceAll(REGEX, "_$1").replace("and ", "").toLowerCase();
         Supplier<Map<Utils.NumberPosition, Map<String, Utils.StateWithNumber>>> mapSupplier = () -> NUM_POS;

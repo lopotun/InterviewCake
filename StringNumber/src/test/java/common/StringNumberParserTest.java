@@ -1,6 +1,5 @@
 package common;
 
-import en.LangNumberParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * <a href=mailto:lopotun@gmail.com>lopotun@gmail.com</a>
  */
 class StringNumberParserTest {
-
     @Test
     void parse1() {
         assertEquals(StringNumberParser.parseNumbersString("one"), 1);
